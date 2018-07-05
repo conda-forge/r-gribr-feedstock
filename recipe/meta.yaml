@@ -1,16 +1,17 @@
 {% set name = "gribr" %}
-{% set version = "v1.2.2" %}
+{% set version = "1.2.2" %}
+{% set build_number = 1 %}
 
 package:
   name: r-{{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/nawendt/{{ name }}/archive/{{ version }}.tar.gz
+  url: https://github.com/nawendt/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: cc3cb3b0e34a120adf5229e4889366697002bc8f37ebb1a2c7734c2acc559616
 
 build:
-  number: 0
+  number: {{ build_number }}
   skip: true  # [win]
   rpaths:
     - lib/R/lib/
@@ -42,10 +43,8 @@ about:
   license_family: BSD
   license_file: LICENSE
   summary: 'R interface for GRIB files using ECMWF ecCodes.'
-
   description: |
-    R interface for GRIB files using ECMWF ecCodes. Easily read GRIB 
-    data into native R data types.
+    Easily read GRIB data into native R data types.
   dev_url: https://github.com/nawendt/gribr
 
 extra:
