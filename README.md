@@ -9,8 +9,7 @@ Feedstock license: BSD 3-Clause
 
 Summary: R interface for GRIB files using ECMWF ecCodes.
 
-R interface for GRIB files using ECMWF ecCodes. Easily read GRIB
-data into native R data types.
+Easily read GRIB data into native R data types.
 
 
 Current build status
