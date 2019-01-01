@@ -1,6 +1,6 @@
 {% set name = "gribr" %}
 {% set version = "1.2.2" %}
-{% set build_number = 1 %}
+{% set build_number = 1001 %}
 
 package:
   name: r-{{ name|lower }}
@@ -20,6 +20,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}  # [not win]
+    - pkg-config
   host:
     - r-base
     - r-proj4
