@@ -1,6 +1,6 @@
 {% set name = "gribr" %}
 {% set version = "1.2.2" %}
-{% set build_number = 1001 %}
+{% set build_number = 1002 %}
 
 package:
   name: r-{{ name|lower }}
