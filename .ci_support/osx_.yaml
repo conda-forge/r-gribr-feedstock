@@ -1,9 +1,9 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
-build_number_decrement:
-- '1000'
 c_compiler:
-- toolchain_c
+- clang
+c_compiler_version:
+- '4'
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -18,11 +18,6 @@ pin_run_as_build:
   r-base:
     max_pin: x.x.x
 proj4:
-- 5.2.0
+- 6.0.0
 r_base:
 - 3.5.1
-zip_keys:
-- - c_compiler
-  - channel_sources
-  - channel_targets
-  - build_number_decrement

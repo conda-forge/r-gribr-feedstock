@@ -1,25 +1,19 @@
-build_number_decrement:
-- '1000'
 c_compiler:
-- toolchain_c
+- gcc
+c_compiler_version:
+- '7'
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
 docker_image:
-- condaforge/linux-anvil
+- condaforge/linux-anvil-comp7
 pin_run_as_build:
   proj4:
     max_pin: x.x.x
   r-base:
     max_pin: x.x.x
 proj4:
-- 5.2.0
+- 6.0.0
 r_base:
 - 3.5.1
-zip_keys:
-- - c_compiler
-  - channel_sources
-  - channel_targets
-  - docker_image
-  - build_number_decrement
