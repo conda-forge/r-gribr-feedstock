@@ -3,7 +3,7 @@ MACOSX_DEPLOYMENT_TARGET:
 c_compiler:
 - clang
 c_compiler_version:
-- '9'
+- '10'
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -17,6 +17,6 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 proj:
-- 7.0.0
+- 7.1.0
 r_base:
 - '3.6'
