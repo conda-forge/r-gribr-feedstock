@@ -5,9 +5,11 @@ Home: http://github.com/nawendt/gribr
 
 Package license: BSD-2-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-gribr-feedstock/blob/master/LICENSE.txt)
 
 Summary: R interface for GRIB files using ECMWF ecCodes.
+
+Development: https://github.com/nawendt/gribr
 
 Easily read GRIB data into native R data types.
 
