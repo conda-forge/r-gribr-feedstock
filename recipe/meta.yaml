@@ -1,4 +1,4 @@
-{% set version = "1.2.2" %}
+{% set version = "1.2.3" %}
 
 package:
   name: r-gribr
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/nawendt/gribr/archive/v{{ version }}.tar.gz
-  sha256: cc3cb3b0e34a120adf5229e4889366697002bc8f37ebb1a2c7734c2acc559616
+  sha256: 45cc29a488d8440aea479433ea6b1a29ef24b58988671db6903675a3e1c86943
 
 build:
-  number: 1013
+  number: 0
   skip: true  # [win]
   rpaths:
     - lib/R/lib/
@@ -23,12 +23,12 @@ requirements:
     - r-base
     - r-proj4
     - proj
-    - eccodes >=2.0.0
+    - eccodes >=2.19.0
   run:
     - r-base
     - r-proj4
     - proj
-    - eccodes >=2.0.0
+    - eccodes >=2.19.0
 
 test:
   commands:
@@ -39,7 +39,7 @@ about:
   license: BSD-2-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'R interface for GRIB files using ECMWF ecCodes.'
+  summary: R interface for GRIB files using ECMWF ecCodes.
   description: |
     Easily read GRIB data into native R data types.
   dev_url: https://github.com/nawendt/gribr
