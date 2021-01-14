@@ -23,12 +23,12 @@ requirements:
     - r-base
     - r-proj4
     - proj
-    - eccodes >=2.0.0
+    - eccodes >=2.19.0
   run:
     - r-base
     - r-proj4
     - proj
-    - eccodes >=2.0.0
+    - eccodes >=2.19.0
 
 test:
   commands:
