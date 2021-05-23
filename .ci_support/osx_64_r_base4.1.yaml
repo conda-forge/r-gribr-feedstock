@@ -17,6 +17,6 @@ pin_run_as_build:
 proj:
 - 7.2.0
 r_base:
-- '3.6'
+- '4.1'
 target_platform:
 - osx-64
