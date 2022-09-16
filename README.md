@@ -3,7 +3,7 @@ About r-gribr
 
 Home: http://github.com/nawendt/gribr
 
-Package license: BSD-2-Clause
+Package license: BSD-3-Clause
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-gribr-feedstock/blob/main/LICENSE.txt)
 
