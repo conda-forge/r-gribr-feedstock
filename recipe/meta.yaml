@@ -1,4 +1,4 @@
-{% set version = "1.2.3" %}
+{% set version = "1.2.4" %}
 
 package:
   name: r-gribr
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/nawendt/gribr/archive/v{{ version }}.tar.gz
-  sha256: 45cc29a488d8440aea479433ea6b1a29ef24b58988671db6903675a3e1c86943
+  sha256: b7ea2956b6e94787539958eff2c8cf36e2ba55f8368d77f5180ee683a57878c2
 
 build:
-  number: 7
+  number: 0
   skip: true  # [win]
   rpaths:
     - lib/R/lib/
@@ -36,7 +36,7 @@ test:
 
 about:
   home: http://github.com/nawendt/gribr
-  license: BSD-2-Clause
+  license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
   summary: R interface for GRIB files using ECMWF ecCodes.
