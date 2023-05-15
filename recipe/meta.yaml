@@ -9,7 +9,7 @@ source:
   sha256: 1a3365eab11989847afbde61ece018557aee8b477f2a5ff124fd955260e49e12
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
   rpaths:
     - lib/R/lib/
@@ -22,12 +22,10 @@ requirements:
   host:
     - r-base
     - r-proj4
-    - proj
     - eccodes >=2.19.0
   run:
     - r-base
     - r-proj4
-    - proj
     - eccodes >=2.19.0
 
 test:
@@ -46,4 +44,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - conda-forge/r
     - nawendt
