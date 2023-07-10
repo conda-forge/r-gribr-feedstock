@@ -1,4 +1,4 @@
-{% set version = "1.2.5" %}
+{% set version = "1.2.6" %}
 
 package:
   name: r-gribr
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/nawendt/gribr/archive/v{{ version }}.tar.gz
-  sha256: 1a3365eab11989847afbde61ece018557aee8b477f2a5ff124fd955260e49e12
+  sha256: 630e660d9c8391d0da5c0ec510d2f27611350f9ab60ac9fc4a85add1f1c7a8fc
 
 build:
-  number: 4
+  number: 0
   skip: true  # [win]
   rpaths:
     - lib/R/lib/
