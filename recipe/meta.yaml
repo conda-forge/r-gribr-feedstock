@@ -1,4 +1,6 @@
 {% set version = "1.2.6" %}
+{% set posix = 'm2-' if win else '' %}
+{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-gribr
@@ -9,28 +11,41 @@ source:
   sha256: 630e660d9c8391d0da5c0ec510d2f27611350f9ab60ac9fc4a85add1f1c7a8fc
 
 build:
-  number: 0
-  skip: true  # [win]
+  merge_build_host: true  # [win]
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}  # [not win]
-    - pkg-config
+    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ posix }}filesystem        # [win]
+    - {{ posix }}sed               # [win]
+    - {{ posix }}grep              # [win]
+    - {{ posix }}autoconf
+    - {{ posix }}automake          # [not win]
+    - {{ posix }}automake-wrapper  # [win]
+    - {{ posix }}pkg-config
+    - {{ posix }}make
+    - {{ posix }}coreutils         # [win]
+    - {{ posix }}zip               # [win]
   host:
     - r-base
     - r-proj4
-    - eccodes >=2.19.0
+    - {{ native }}eccodes >=2.19.0
   run:
     - r-base
     - r-proj4
-    - eccodes >=2.19.0
+    - {{ native }}eccodes >=2.19.0
+    - {{ native }}gcc-libs         # [win]
 
 test:
   commands:
     - $R -e "library('gribr')"  # [not win]
+    - "\"%R%\" -e \"library('gribr')\""  # [win]
 
 about:
   home: http://github.com/nawendt/gribr
