@@ -1,4 +1,5 @@
 {% set version = "1.2.7" %}
+{% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-gribr
@@ -18,9 +19,22 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}  # [not win]
-    - {{ stdlib("c") }}
-    - pkg-config
+    - {{ compiler('c') }}          # [not win]
+    - {{ stdlib("c") }}            # [not win]
+    - {{ compiler('m2w64_c') }}    # [win]
+    - {{ stdlib("m2w64_c") }}      # [win]
+    - {{ posix }}filesystem        # [win]
+    - {{ posix }}sed               # [win]
+    - {{ posix }}grep              # [win]
+    - {{ posix }}autoconf
+    - {{ posix }}automake          # [not win]
+    - {{ posix }}automake-wrapper  # [win]
+    - {{ posix }}pkg-config
+    - {{ posix }}make
+    - {{ posix }}coreutils         # [win]
+    - {{ posix }}zip               # [win]
+    - {{ posix }}tar               # [win]
+    - {{ posix }}gzip              # [win]
   host:
     - r-base
     - r-proj4
@@ -32,7 +46,8 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('gribr')"  # [not win]
+    - $R -e "library('gribr')"           # [not win]
+    - "\"%R%\" -e \"library('proj4')\""  # [win]
 
 about:
   home: http://github.com/nawendt/gribr
