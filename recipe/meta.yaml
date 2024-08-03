@@ -47,7 +47,7 @@ requirements:
 test:
   commands:
     - $R -e "library('gribr')"           # [not win]
-    - "\"%R%\" -e \"library('proj4')\""  # [win]
+    - "\"%R%\" -e \"library('gribr')\""  # [win]
 
 about:
   home: http://github.com/nawendt/gribr
