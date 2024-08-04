@@ -1,0 +1,8 @@
+diff --git a/src/Makevars.ucrt b/src/Makevars.ucrt
+new file mode 100644
+index 0000000..e2f8a01
+--- /dev/null
++++ b/src/Makevars.ucrt
+@@ -0,0 +1,2 @@
++PKG_LIBS = -L$(LIBRARY_LIB) -leccodes
++PKG_CPPFLAGS = -I$(LIBRARY_INC)
