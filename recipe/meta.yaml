@@ -8,14 +8,8 @@ package:
 source:
   url: https://github.com/nawendt/gribr/archive/v{{ version }}.tar.gz
   sha256: 6fa045cb7a0422c193c799f3462af876116b3e29320df65c2e40bcf78f7ebb1a
-  patches:
-    - patches/makevars-ucrt.patch
 
 build:
-  script:
-    - echo $(ls ${PREFIX}/src)
-    - echo $(ls ${SRC_DIR}/src)
-
   number: 1
   # Checking windows to see if it passes. Uncomment the line if it fails.
   # skip: true  # [win]
