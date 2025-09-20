@@ -11,11 +11,13 @@ source:
 
 build:
   number: 2
-  # Checking windows to see if it passes. Uncomment the line if it fails.
-  # skip: true  # [win]
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
