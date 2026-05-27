@@ -58,11 +58,7 @@ requirements:
 
 tests:
   - script:
-      - if: not win
-        then: $R -e "library('gribr')"
-      - if: win
-        then: '"%R%" -e "library(''gribr'')"'
-
+      - Rscript -e "library('gribr')"
 about:
   homepage: http://github.com/nawendt/gribr
   repository: https://github.com/nawendt/gribr
