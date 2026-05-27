@@ -1,0 +1,79 @@
+context:
+  version: "1.2.7"
+
+package:
+  name: r-gribr
+  version: ${{ version }}
+
+source:
+  url: https://github.com/nawendt/gribr/archive/v${{ version }}.tar.gz
+  sha256: 6fa045cb7a0422c193c799f3462af876116b3e29320df65c2e40bcf78f7ebb1a
+
+build:
+  number: 2
+  dynamic_linking:
+    rpaths:
+      - lib/R/lib/
+      - lib/
+    missing_dso_allowlist:
+      - if: win
+        then:
+          - "*/R.dll"
+          - "*/Rblas.dll"
+          - "*/Rlapack.dll"
+
+requirements:
+  build:
+    - if: not win
+      then:
+        - ${{ compiler('c') }}
+        - ${{ stdlib("c") }}
+        - autoconf
+        - automake
+        - pkg-config
+        - make
+    - if: win
+      then:
+        - ${{ compiler('m2w64_c') }}
+        - ${{ stdlib("m2w64_c") }}
+        - m2-filesystem
+        - m2-sed
+        - m2-grep
+        - m2-autoconf
+        - m2-automake-wrapper
+        - m2-pkg-config
+        - m2-make
+        - m2-coreutils
+        - m2-zip
+        - m2-tar
+        - m2-gzip
+  host:
+    - r-base
+    - r-proj4
+    - eccodes >=2.19.0
+  run:
+    - r-base
+    - r-proj4
+    - eccodes >=2.19.0
+
+tests:
+  - script:
+      - if: not win
+        then: $R -e "library('gribr')"
+      - if: win
+        then: '"%R%" -e "library(''gribr'')"'
+
+about:
+  homepage: http://github.com/nawendt/gribr
+  repository: https://github.com/nawendt/gribr
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE
+  summary: R interface for GRIB files using ECMWF ecCodes.
+  description: |
+    Easily read GRIB data into native R data types.
+
+extra:
+  recipe-maintainers:
+    - conda-forge/r
+    - nawendt
