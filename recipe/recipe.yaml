@@ -26,7 +26,7 @@ requirements:
   build:
     - if: build_platform != target_platform
       then:
-        - cross-r-base ${{ r_base }}
+        - cross-r-base ${{ r_base }}.*
         - r-base
     - if: not win
       then:
