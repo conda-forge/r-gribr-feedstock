@@ -24,6 +24,10 @@ build:
 
 requirements:
   build:
+    - if: build_platform != target_platform
+      then:
+        - cross-r-base ${{ r_base }}
+        - r-base
     - if: not win
       then:
         - ${{ compiler('c') }}
@@ -59,6 +63,7 @@ requirements:
 tests:
   - script:
       - Rscript -e "library('gribr')"
+
 about:
   homepage: http://github.com/nawendt/gribr
   repository: https://github.com/nawendt/gribr

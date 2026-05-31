@@ -7,3 +7,5 @@ github:
   tooling_branch_name: main
 provider:
   win: azure
+build_platform:
+  osx_arm64: osx_64
