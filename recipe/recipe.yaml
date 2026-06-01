@@ -65,7 +65,7 @@ tests:
   - if: build_platform == target_platform
     then:
       - script:
-          - Rscript -e "library('gribr')"  - script:
+          - Rscript -e "library('gribr')"
 
 about:
   homepage: http://github.com/nawendt/gribr
