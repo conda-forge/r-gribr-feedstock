@@ -28,6 +28,7 @@ requirements:
       then:
         - cross-r-base ${{ r_base }}.*
         - r-base
+        - r-proj4
     - if: not win
       then:
         - ${{ compiler('c') }}
