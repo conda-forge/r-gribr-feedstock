@@ -62,8 +62,10 @@ requirements:
     - eccodes >=2.19.0
 
 tests:
-  - script:
-      - Rscript -e "library('gribr')"
+  - if: build_platform == target_platform
+    then:
+      - script:
+          - Rscript -e "library('gribr')"  - script:
 
 about:
   homepage: http://github.com/nawendt/gribr
